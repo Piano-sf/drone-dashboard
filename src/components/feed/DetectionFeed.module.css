@@ -1,0 +1,29 @@
+/* src/components/feed/DetectionFeed.module.css */
+
+.feedList {
+  /* --- ✨ นี่คือส่วนที่ทำให้สกรอลได้ ✨ --- */
+  flex-grow: 1;     /* 1. ยืดให้เต็มพื้นที่ที่เหลือใน .feedContainer */
+  overflow-y: auto;   /* 2. ถ้าเนื้อหาล้น ให้มี Scrollbar */
+  min-height: 0;      /* 3. (สำคัญ) ทริคสำหรับ Flexbox 
+                          เพื่อให้มันรู้ว่าต้องเริ่มย่อและสกรอล */
+  
+  /* --- (ปรับแต่ง Scrollbar ให้สวยงาม) --- */
+  scrollbar-width: thin;
+  scrollbar-color: #553b9a #1a222e; /* (สีม่วง / สีพื้นหลัง) */
+}
+
+/* (สำหรับ Chrome/Safari) */
+.feedList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.feedList::-webkit-scrollbar-track {
+  background: #1a222e;
+  border-radius: 4px;
+}
+
+.feedList::-webkit-scrollbar-thumb {
+  background-color: #553b9a;
+  border-radius: 4px;
+  border: 2px solid #1a222e;
+}

@@ -1,0 +1,49 @@
+/* src/components/map/DetectionPopup.module.css */
+
+.popupCard {
+  width: 240px; /* (ขนาดของ Popup) */
+  background-color: #333; /* (สี Dark Mode) */
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  /* (ป้องกัน Mapbox ใส่ padding/margin เอง) */
+  padding: 0;
+  margin: 0;
+}
+
+.popupImage {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.popupContent {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* (ระยะห่างระหว่างแถว) */
+}
+
+.popupRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.subtitle {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.body {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.caption {
+  font-size: 0.8rem;
+  color: #aaa;
+  display: block; /* (ให้ Lat/Lng ขึ้นบรรทัดใหม่) */
+}

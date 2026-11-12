@@ -1,0 +1,75 @@
+/* src/components/filters/GlobalFilterBar.module.css */
+
+.filterBar {
+  /* === เพิ่ม === */
+  display: flex;
+  flex-wrap: wrap; /* ถ้าจอเล็กให้ตัดบรรทัด */
+  align-items: flex-end; /* จัดให้ปุ่มอยู่ล่างสุด */
+  gap: 20px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #e0e0e0;
+}
+
+/* สไตล์ Input และ Select */
+.filterGroup input[type="text"],
+.filterGroup select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.filterGroup select option {
+  background: #1a2b42; /* สีพื้นหลังเข้ม */
+  color: white;
+}
+
+.slider {
+  accent-color: #007bff; /* สีของ slider */
+  padding: 0;
+  margin-top: 4px;
+}
+
+/* (แก้ไข) .applyButton */
+.applyButton {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  /* (ลบ) margin-left: auto; */
+}
+.applyButton:hover {
+  background-color: #0056b3;
+}
+
+/* (เพิ่ม) .buttonGroup */
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  margin-left: auto; /* ดันกลุ่มปุ่มไปขวาสุด */
+}
+
+/* (เพิ่ม) .addButton */
+.addButton {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745; /* สีเขียว */
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+.addButton:hover {
+  background-color: #218838;
+}

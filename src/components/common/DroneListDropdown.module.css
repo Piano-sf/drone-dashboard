@@ -1,0 +1,13 @@
+.dropdownContainer {
+  width: 100%;
+  padding: 0 10px;
+}
+.dropdown {
+  width: 100%;
+  padding: 10px;
+  background-color: #1a222e;
+  color: #e0e0e0;
+  border: 1px solid #3a4b63;
+  border-radius: 5px;
+  font-size: 1rem;
+}

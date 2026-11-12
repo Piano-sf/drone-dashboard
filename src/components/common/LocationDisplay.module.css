@@ -1,0 +1,26 @@
+/* src/components/common/LocationDisplay.module.css */
+.locationContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  padding: 8px 14px;
+  border-radius: 6px;
+  
+  
+  /* (เพิ่ม) ทำให้มันอยู่ตรงกลางและไม่หดตัว */
+  flex-grow: 1; /* 👈 ทำให้มันขยายตัวดัน Title กับ Dropdown */
+  justify-content: center; /* 👈 จัดข้อความไว้ตรงกลาง */
+  min-width: 200px; /* 👈 กันไม่ให้มันหดตัวเกินไป */
+}
+.icon {
+  font-size: 1rem;
+}
+.text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  white-space: nowrap; /* 👈 กันข้อความตกบรรทัด */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

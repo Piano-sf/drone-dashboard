@@ -1,0 +1,107 @@
+/* src/index.css */
+
+/* (โค้ด CSS พื้นฐานของ Vite/React ถ้ามี) */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+/* (สิ้นสุดโค้ด CSS พื้นฐาน) */
+
+
+/* --- 1. Keyframes (ท่าเต้นใหม่) --- */
+@keyframes pulse-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* --- 2. Container (ตัวแม่) --- */
+.custom-marker-container {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; 
+}
+
+/* --- 3. Pulse Circle (ลูก 1 - วงที่เต้น) --- */
+.pulse-circle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* background-color: ถูกเซ็ตด้วย JS */
+  opacity: 0.4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse-animation 2s ease-out infinite;
+  pointer-events: none;
+}
+
+/* --- 4. Icon Marker (ลูก 2 - ไอคอนตรงกลาง) --- */
+.icon-marker {
+  cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px;
+  border: 3px solid; /* 👈 สีขอบ ถูกเซ็ตด้วย JS */
+  
+  user-select: none;
+  pointer-events: auto; 
+}
+
+/* (สไตล์สำหรับ SVG ที่ Iconify สร้าง) */
+.icon-marker svg {
+  width: 24px;
+  height: 24px;
+  color: black; /* 👈 สีไอคอน ถูกเซ็ตด้วย JS */
+  fill: currentColor;
+}
+
+
+/* (Optional) ทำให้ Popup ของ Mapbox เป็นสี Dark Mode */
+.mapboxgl-popup-content {
+  background-color: #333;
+  color: white;
+}
+.mapboxgl-popup-tip {
+  border-top-color: #333 !important;
+  border-bottom-color: #333 !important;
+}
+
+/* ✨ (เพิ่ม) ซ่อนกรอบ Popup ของ Mapbox ✨ */
+.custom-popup .mapboxgl-popup-content {
+  background: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* (ซ่อนหางลูกศรของ Popup) */
+.custom-popup .mapboxgl-popup-tip {
+  display: none;
+}
+

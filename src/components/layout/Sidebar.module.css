@@ -1,0 +1,117 @@
+/* src/components/layout/Sidebar.module.css */
+
+.sidebar {
+  width: 250px; /* ความกว้างตอนขยาย */
+  background-color: #0c1a2e; /* สีน้ำเงินเข้ม */
+  color: #e0e0e0;
+  padding: 16px;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+  /* --- ส่วนที่แก้ไข --- */
+  overflow-y: auto; /* เปลี่ยนจาก hidden ให้อนุญาตให้ scroll แนวตั้งได้ */
+  overflow-x: hidden; /* กัน scroll แนวนอน */
+
+  /* --- เพิ่มสำหรับ Firefox --- */
+  /* (สีตัวเลื่อน, สีพื้นหลัง) - ปรับสีให้เข้ากับธีมมืด */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+  width: 80px; /* ความกว้างตอนย่อ */
+}
+
+/* สไตล์ของปุ่มย่อ/ขยาย */
+.toggleButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.toggleButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ลิสต์เมนู */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* รายการเมนู */
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #c0c0c0;
+  white-space: nowrap; /* กันข้อความตกบรรทัด */
+  transition: background-color 0.2s;
+}
+
+.navItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* สไตล์ตอน Active (หน้าปัจจุบัน) */
+.navItem.active {
+  background-color: #007bff; /* สีฟ้า */
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 1.5rem; /* ขนาดไอคอน (emoji) */
+  min-width: 48px; /* จัดให้ไอคอนอยู่ตรงกลางตอนย่อ */
+  text-align: center;
+}
+
+.name {
+  margin-left: 12px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* ซ่อนชื่อเมนูตอนย่อ */
+.sidebar.collapsed .name {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/* * --- ส่วนที่เพิ่มเข้ามาใหม่ทั้งหมด --- 
+ * สไตล์ Scrollbar สำหรับ Chrome, Edge, Safari
+ * (ต้องขึ้นต้นด้วย .sidebar เพื่อให้มีผลแค่กับ Sidebar นี้)
+ */
+.sidebar::-webkit-scrollbar {
+  width: 8px; /* ทำให้เล็ก/บางลง */
+}
+
+/* พื้นหลัง (Track) - ทำให้โปร่งใสเล็กน้อย */
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* ตัวเลื่อน (Thumb) - ใช้สีขาวโปร่งแสง */
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* เมื่อเอาเมาส์ชี้ */
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}

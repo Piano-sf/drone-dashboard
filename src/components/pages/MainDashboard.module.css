@@ -1,0 +1,95 @@
+/* src/components/pages/MainDashboard.module.css */
+
+.headerRow {
+  display: flex;
+  justify-content: space-between; /* 👈 "ดัน" 2 ข้างออกจากกัน */
+  align-items: center;         /* 👈 "จัด" ให้อยู่กึ่งกลางแนวตั้ง */
+  flex-shrink: 0; /* (ป้องกันการหดตัว) */
+}
+
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+}
+
+.mapGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  flex-grow: 1; 
+  overflow: hidden;
+}
+
+.mapColumn {
+  display: flex;
+  flex-direction: column; /* เรียง บน-ล่าง */
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  color: white;
+  overflow: hidden;
+}
+
+/* * ✨ 1. แก้ปัญหากรอบขาว ✨
+ * ย้าย border-radius และ overflow มาไว้ที่นี่
+ */
+.mapWrapperContainer {
+  flex: 1; /* 👈 "ยืด" ให้เต็มพื้นที่ที่เหลือ */
+  position: relative; 
+  min-height: 0;
+  
+  /* (ย้ายมาจาก MapWrapper.module.css) */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* * ✨ 2. แก้ปัญหาแผนที่เล็ก ✨
+ * เปลี่ยน height จาก 300px เป็น 200px (หรือ 150px)
+ * (ปรับ 200px ได้ตามชอบ)
+ */
+.feedContainer {
+  flex-shrink: 0; /* 👈 ห้ามหด */
+  height: 100px;  /* 👈 ‼️ ลดความสูง Feed ‼️ */
+  
+  overflow-y: auto; 
+  background: rgba(0, 0, 0, 0.2); 
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.feedContainer h4 {
+  margin: 0 0 8px 0;
+}
+
+/* === (ส่วนที่เหลือเหมือนเดิม) === */
+.mapHeader {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mapHeader h3 {
+  margin: 0; 
+  font-size: 1.25rem;
+}
+.statsContainer {
+  display: flex;
+  gap: 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.statTotal {
+  color: #9b9a9a; 
+}
+.statActive {
+  color: #2ecc71; 
+}
+.statLost {
+  color: #E74C3C; 
+}

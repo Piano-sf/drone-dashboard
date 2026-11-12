@@ -1,0 +1,70 @@
+/* src/components/feed/DetectionFeedItem.module.css */
+
+.feedItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.feedItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  background-color: #555;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.itemInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden; /* กันข้อความล้น */
+}
+
+.type {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.details {
+  font-size: 0.8rem;
+  color: #cccccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.itemMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-left: auto;
+  text-align: right;
+}
+
+.timestamp {
+  font-size: 0.8rem;
+  color: #cccccc;
+}
+
+.confidence {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #4CAF50; /* สีเขียวสำหรับ Confidence */
+}
+
+/* (Optional) ถ้า Confidence ต่ำให้เป็นสีส้ม/แดง */
+/* .confidence.low { color: #FFA000; } */

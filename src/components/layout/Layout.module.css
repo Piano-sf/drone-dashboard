@@ -1,0 +1,24 @@
+/* src/components/layout/Layout.module.css */
+
+.appContainer {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* ให้แอปสูงเต็มจอ */
+  overflow: hidden; /* กันการเลื่อนทั้งหน้า */
+}
+
+.contentArea {
+  flex-grow: 1; /* ให้พื้นที่เนื้อหาขยายเต็มที่ */
+  padding: 24px;
+  overflow-y: auto; /* ให้เลื่อนได้เฉพาะส่วนเนื้อหา */
+  color: aliceblue;
+  background-image: url('/images/background.png');
+  background-image: 
+    /* 1. ฟิล์มสีดำโปร่งแสง (ปรับ 0.6 ได้ตามชอบ) */
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    /* 2. รูปภาพของเรา */
+    url('/images/background.png'); 
+  background-size: cover; /* ทำให้ภาพเต็มพื้นที่ */
+  background-position: center center; /* จัดกลาง */
+  background-repeat: no-repeat;
+}
