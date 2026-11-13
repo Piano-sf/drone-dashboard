@@ -141,7 +141,7 @@ npm install
 ### 2. ตั้งค่า Environment Variables
 สร้างไฟล์ `.env` ที่โฟลเดอร์รากของโปรเจค และระบุค่า Mapbox Access Token:
 ```env
-VITE_MAPBOX_TOKEN=pk.eyJ1IjoieW91ci11c2VybmFtZSIsImEiOiJ5b3VyLW1hcGJveC10b2tlbiJ9...
+VITE_MAPBOX_TOKEN=pk...........................
 ```
 
 ### 3. รันเซิร์ฟเวอร์สำหรับพัฒนา (Development Server)
